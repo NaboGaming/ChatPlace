@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Karibu ChatPlace</title>
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+<link rel="stylesheet" type="text/css" href="bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="manifest" href="_manifest.json">
+<meta id="theme-check" name="theme-color" content="black">
+<style>
+			.speach-icon a{padding-top:0!important;display:block;border-radius:15px;}.speach-input input{border:none;width:97%;background-color: #E9E4F0;height:44px;margin-left:3px;margin-top:8px;border-radius:15px}
+		</style>
+<style>
+.message-container {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+}
+.senderinbox {
+    font-weight: bold;
+    margin-right: 20px;
+}
+.sendersend {
+    font-weight: bold;
+    margin-right: 20px;
+    color: pink;
+}
+.message-container.me {
+    justify-content: flex-end;
+}
+
+.message-bubble {
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word;
+    padding: 10px;
+    margin: 5px;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.message-bubble.message-sender {
+    background-color: #E9E4F0; /* Soft purple for sender bubble */
+    align-self: flex-end;
+    width: auto;
+    color: #000; /* Adjust text color for sender messages */
+}
+.message-bubble.message-receiver {
+    background-color: #D5DBDB; /* Light blue-grey for receiver bubble */
+    align-self: flex-start;
+    width: auto;
+    color: #000; /* Adjust text color for receiver messages */
+}
+
+.message-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px;
+    background-color: #fafafa; /* Light grey for message header background */
+    border-radius: 11px;
+}
+.timestamp {
+    font-size: 12px;
+    margin-left: auto;
+    color: #999; /* Grey for timestamp color */
+}
+
+.message-content {
+    position: relative;
+}
+
+.delete-message {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    color: #999; /* Grey color for delete icon */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.delete-message:hover {
+    color: #ed4956; /* Red color on hover for delete icon */
+}
+   </style>
+   <style>@keyframes blink {0% { opacity: 1; }50% { opacity: 0; }100% { opacity: 1; }}#blinking-icon {animation: blink 1s infinite;opacity: 1}</style>
+<link rel="apple-touch-icon" sizes="180x180" href="images/icon-192x192.png"></head>
+<body class="theme-light">
+<div id="preloader"><div class="spinner-border color-black" role="status"></div></div>
+<div id="page">
+<div id="menu-main" data-menu-active="nav-pages" data-menu-load="menu-main.html" style="width:280px;" class="offcanvas offcanvas-start offcanvas-detached rounded-m">
+</div>
+<div class="header-bar header-fixed header-app header-bar-detached">
+<a href="https://nabogaming.github.io/Nyumbani/"><i class="bi bi-arrow-left-circle-fill font-20 color-theme"></i></a>
+<a href="#" class="header-title color-theme"> <img src="logo2.gif" width="40" height="40"></a>
+
+<!--
+<a href="#" class="show-on-theme-light" data-toggle-theme=""><i class="bi bi-moon-fill font-13"></i></a>
+<a href="#" class="show-on-theme-dark" data-toggle-theme=""><i class="bi bi-lightbulb-fill color-yellow-dark font-13"></i></a>-->
+</div>
+<div id="menu-color" data-menu-load="menu-highlights.html" style="height:340px" class="offcanvas offcanvas-bottom offcanvas-detached rounded-m">
+</div>
+<div class="page-content header-clear-medium">
+          <div class="card card-style rounded-s shadow-card shadow-card-l" style="background-image: url(imp6.jpg);" data-card-height="200">
+          
+           <div class="opacity-90 card-center">
+        <p id="timer" style="margin-top: 10%; padding: 15px; background: linear-gradient(to left, black, grey);" class="text-center font-800 color-white">loading....</p>
+      
+    </div>
+          <div id="jisajili" class="card-bottom pb-3 px-3">
+<h3 class="color-white">Shindano Free Fire The Chaos</h3>
+<p class="color-white opacity-70 mb-0 mt-n1">Shuhudia pambano lenye vionjo kama vyoteee!</p>
+</div>
+         <!--<div class="card-top" style="top: 13px; margin-right: 2%;">
+              <span id="timeago" style="padding: 2px; border-radius: 8px;" class="border float-end font-12 bg-dark font-500 opacity-80 color-white" > loading....</span>
+          </div>
+          <div class="card-bottom" style="padding: 10px;">
+              <span class="float-end">
+                  <i class="bi bi-facebook"></i>
+                  <i class="bi bi-instagram"></i>
+                  <i class="bi bi-whatsapp"></i>
+                  <i class="bi bi-tiktok"></i>
+                  <i class="bi bi-twitch" style="margin-top: 50px;"></i>
+              </span>
+           
+            <span id="blinking-icon" class="float-start font-15 font-800" style='color: red; padding: 3px; border-radius: 5px;'>• LIVE</span>
+          </div>
+                      	<div class="card-center">
+    <img style="padding: 10px; margin-left: 34vw; margin-top: 0; font-size: 70px;" src="twitch.png" class="bg-white opacity-70 rounded-xl"></i>
+	</div>-->
+	
+
+<div class="card-overlay rounded-m bg-gradient-fade"></div>
+</div>
+
+<p id="currentDate" style="margin:-20px 0 0 0;padding:0;" class="text-center font-200 font-11 opacity-50">Inapakia......</p>
+<div id="messages"></div>
+         <div id="footer-bar" class="footer-bar footer-bar-detached">
+    <div id="sendMsg" class="flex-fill rounded-m speach-input">
+        <input type="text" id="msgTxt" placeholder="Andika Meseji Yako Hapa.....">
+        </div>
+        <div id="msgBtn" onclick="module.sendMsg()"><img src="send.png" width="40" height="40" style="margin-top: 10px; margin-right: -2px;"></div>
+    </div>
+</div>
+</div>
+    <script>
+        module = {};
+    </script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getDatabase, ref, set, remove, onChildAdded, onChildRemoved } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+    const firebaseConfig = {
+      // Your Firebase configuration
+            apiKey: "AIzaSyB97_PQzaTAEb6dGHeW-qKQJtETU-fJ064",
+      authDomain: "chatikidijitari.firebaseapp.com",
+      databaseURL: "https://chatikidijitari-default-rtdb.firebaseio.com",
+      projectId: "chatikidijitari",
+      storageBucket: "chatikidijitari.appspot.com",
+      messagingSenderId: "717579176975",
+      appId: "1:717579176975:web:7d7e71fbe80a1b680c277a"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    var msgTxt = document.getElementById('msgTxt');
+    var sender = sessionStorage.getItem('sender');
+
+    if (!sender) {
+        sender = prompt('PLEASE ENTER YOUR NAME');
+        if (sender) {
+            sessionStorage.setItem('sender', sender);
+        }
+    }
+
+   // Function to send messages with a limit of 50 words
+module.sendMsg = function sendMsg(){
+    var msg = msgTxt.value;
+    var wordCount = msg.split(" ").filter(function(v){return v!==''}).length; // Get word count
+    if (wordCount > 50) {
+        alert("Message should not exceed 50 words."); // Notify user about word limit
+    } else {
+        var timestamp = new Date().getTime();
+        set(ref(db, "messages/" + timestamp), {
+            msg: msg,
+            sender: sender,
+            timestamp: timestamp // Add timestamp to the message
+        });
+        msgTxt.value = "";
+    }
+}
+// Function to format timestamp as time
+function formatTimestamp(ts) {
+    var date = new Date(ts);
+    return date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+}
+
+function removeOldMessages() {
+    const threeHoursAgo = new Date().getTime() - (3 * 60 * 60 * 1000);
+    onChildAdded(ref(db, "messages"), (data) => {
+        if (data.val().timestamp < threeHoursAgo) {
+            remove(ref(db, "messages/" + data.key));
+        }
+    });
+}
+
+removeOldMessages(); // Call the function to remove old messages
+    // Function to listen for new messages
+onChildAdded(ref(db, "messages"), (data) => {
+    var messages = document.getElementById('messages');
+    if (data.val().sender == sender) {
+        messages.innerHTML += `
+            <div class="message-container me" id="${data.key}">
+                <div class="message-bubble message-sender">
+                    <div class="message-header">
+                        <div class="sendersend">You : ${data.val().sender}</div>
+                        <div class="timestamp">${formatTimestamp(data.val().timestamp)}</div>
+                    </div>
+                    <div class="message-content">
+                        ${data.val().msg}
+                        <span class="delete-message" onclick="module.dltMsg('${data.key}')"><i class="bi bi-trash"></i></span>
+                    </div>
+                </div>
+            </div>`;
+    } else {
+        messages.innerHTML += `
+            <div class="message-container notMe" id="${data.key}">
+                <div class="message-bubble message-receiver">
+                    <div class="message-header">
+                        <div class="senderinbox">${data.val().sender}</div>
+                        <div class="timestamp">${formatTimestamp(data.val().timestamp)}</div>
+                    </div>
+                    <div class="message-content">
+                        ${data.val().msg}
+                    </div>
+                </div>
+            </div>`;
+    }
+    var messages = document.getElementById('messages');
+    messages.scrollTop = messages.scrollHeight;
+});
+       // TO DELETE MSG
+
+        module.dltMsg = function dltMsg(key){
+
+            remove(ref(db,"messages/"+key));
+        }
+
+        // WHEN MSG IS DELETED
+        onChildRemoved(ref(db,"messages"),(data)=>{
+            var msgBox = document.getElementById(data.key);
+            messages.removeChild(msgBox);
+        })
+</script>
+<script>function displayCurrentDateTime() {var dateElement = document.getElementById('currentDate');var currentDateTime = new Date();var days = ['Jumapili', 'Jumatatu', 'Jumanne', 'Jumatano', 'Alhamisi', 'Ijumaa', 'Jumamosi'];var day = days[currentDateTime.getDay()];var dayOfMonth = currentDateTime.getDate();var suffix = getDaySuffix(dayOfMonth);var months = ['Januari', 'Februari', 'Machi', 'Aprili', 'Mei', 'Juni', 'Julai', 'Agosti', 'Septemba', 'Oktoba', 'Novemba', 'Desemba'];var month = months[currentDateTime.getMonth()];var year = currentDateTime.getFullYear();var hours = currentDateTime.getHours();var minutes = currentDateTime.getMinutes();var seconds = currentDateTime.getSeconds();hours = (hours < 10) ? '0' + hours : hours;minutes = (minutes < 10) ? '0' + minutes : minutes;seconds = (seconds < 10) ? '0' + seconds : seconds;var formattedDateTime ='Leo ni' + ' ' + day + ', ' + dayOfMonth + suffix + ' ' + month + ' ' + year + ' - ' + hours + ':' + minutes + ':' + seconds;dateElement.textContent = formattedDateTime;}function getDaySuffix(day) {if (day > 3 && day < 21) return 'th';switch (day % 10) {case 1: return "st";case 2: return "nd";case 3: return "rd";default: return "th";}}displayCurrentDateTime();setInterval(displayCurrentDateTime, 1000); </script><script src="bootstrap.min.js"></script>
+<script>function startCountdown(expiryDate) {var deadline = new Date(expiryDate).getTime();var x = setInterval(function() {var now = new Date().getTime();var distance = deadline - now;var days = Math.floor(distance / (1000 * 60 * 60 * 24));var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));var seconds = Math.floor((distance % (1000 * 60)) / 1000);document.getElementById("timer").innerHTML = "<i class='bi bi-clock'></i> " + days + "d " + hours.toString().padStart(2, '0') + "h "+ minutes.toString().padStart(2, '0') + "m " +  seconds.toString().padStart(2, '0') + "s";if (distance < 0) {clearInterval(x);
+document.getElementById("timer").innerHTML ="<p class='text-center font-30 color-white' style=' margin-bottom: 0;'>SHINDANO LINAANDALIWA</p>";document.getElementById("jisajili").style.display = "none";document.getElementById("jisajili2").style.display = "none";document.getElementById("jisajili3").style.display = "none";}}, 1000);}var expiryDate = "2024-03-03T21:00:00";startCountdown(expiryDate);</script>
+<script>function timeAgo(timestamp) {const now = new Date();const past = new Date(timestamp);const seconds = Math.floor((now - past) / 1000);const minutes = Math.floor(seconds / 60);const hours = Math.floor(minutes / 60);const days = Math.floor(hours / 24);const months = Math.floor(days / 30);const years = Math.floor(days / 365);if (years > 1) {return `${years} years ago`;} else if (years === 1) {return `1 year ago`;} else if (months > 1) {return `${months} months ago`;} else if (months === 1) {return `1 month ago`;} else if (days > 1) {return `${days} days ago`;} else if (days === 1) {return `1 day ago`;} else if (hours > 1) {return `${hours} hours ago`;} else if (hours === 1) {return `1 hour ago`;} else if (minutes > 1) {return `${minutes} minutes ago`;} else if (minutes === 1) {return `1 minute ago`;} else {return `${seconds} seconds ago`;}}const timestamp = '2024-02-14T10:32:00';const timeElement = document.getElementById('timeago');function updateTimeAgo() {timeElement.innerText = timeAgo(timestamp);}updateTimeAgo();setInterval(updateTimeAgo, 1000);
+</script>
+<script src="bootstrap.min.js"></script>
+<script src="custom.js"></script>
+</body>
