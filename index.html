@@ -187,7 +187,7 @@ border-radius: 40%; /* Make the icon container rounded */
 module.sendMsg = function sendMsg(){
     var msg = msgTxt.value;
     var wordCount = msg.split(" ").filter(function(v){return v!==''}).length; // Get word count
-    if (wordCount > 50) {
+    if (wordCount > 50000) {
         alert("Message should not exceed 50 words."); // Notify user about word limit
     } else {
         var timestamp = new Date().getTime();
